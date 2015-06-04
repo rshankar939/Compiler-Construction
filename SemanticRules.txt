@@ -1,0 +1,11 @@
+1. In functionHeader, if TK_FUNCID is already declared in same scope then throw error, else add it to the symbol table.
+2. In statements, if TK_ID is already declared in same scope then throw error, else add it to the symbol table.
+4. TK_MAIN should be defined only once.
+5. While initializing an array, dimension of rhs should be dimension of one row of array(considering row major implementation).
+6. Check that return statements are not written inside main block.
+7. Check that each function definition have atleast one return statement.
+8. In function calling, input parameters list must be of the same type as those used in the function definition. Number of input parameters must be same as that of those used in the function definition.
+9. A function cannot be invoked within its own scope i.e. no recursive calling.
+10. The right hand side expression of an assignment statement must be of the same type as that of the left hand side identifier.
+11.A function definition for a function being used by another function must precede the definition of the function using it.
+12. A boolean condition must have the expression of boolean type

@@ -1,0 +1,31 @@
+//Test Code 5 
+//swap the given numbers
+func _swapnumber(int a, int b) -> (int, int) {
+	return (b,a);
+}
+//reverse a given array
+__main__ {
+	int list(10), i, j, k, l;
+	list = [1,2,3,4,5,6,7,8,9,10];
+	i = 9;
+	j = 0;
+	while (j<i) {
+		k = j;
+		while(k<i) {
+			l = k + 1;
+			int a,b;
+			//a = list(l);
+			//b = list(k);
+			(a, b) = _swapnumber(a, b);
+			k = k + 1;
+		}
+		j = j + 1;
+	}
+	//print new list
+	j=0;
+	while(j<i) {
+		//k = list(j);
+		write(k);
+		j = j + 1;
+	}
+}

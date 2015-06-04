@@ -1,0 +1,38 @@
+//Test Code 4 
+//demostrating tuple eand multiple return
+//return a random record
+func _getanotherrecord(int a) -> (int, real, char, bool) {
+	bool b1;
+	int b;
+	b = a%2;
+	if(b == 0) {
+		b1 = true;
+	}
+	else {
+		b1 = false;
+	}
+	return (a, 3.98, 'w', b1);
+}
+
+__main__ {
+	tuple (int, real, char, bool) record1;
+	string str1,str2;
+	str2 = "printing record 1 ";
+	record1 = |1, 89.5, 8, true|;
+	write(str2);
+	int a;
+	real b;
+	//a = record1:0;
+	//b = record1:1;
+	write(a);
+	write(b);
+	str1 = "";
+	record1 = _getanotherrecord(1);
+	write(str1);
+	write(str2);
+	//a = record1:0;
+	//b = record1:1;
+	write(a);
+	write(b);
+
+}

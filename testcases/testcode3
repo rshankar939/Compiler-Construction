@@ -1,0 +1,16 @@
+//Test Code 3
+//code for computing factorial of 12
+__main__ {
+	int a,fact;
+	string str1;
+	fact = 1;
+	a = 12;
+	while(not(a==0))
+	{
+		fact = fact*a;
+		a = a-1;
+	}
+	str1 = "Factorial of 12 is ";
+	write(str1);
+	write(fact);
+}

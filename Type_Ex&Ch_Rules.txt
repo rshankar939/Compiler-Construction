@@ -1,0 +1,19 @@
+1. The type of an identifier is the type appearing while declaring the variable.
+2. The type of TK_NUM is integer.
+3. The type of TK_RNUM is real.
+4. The type of TK_CCONST is char.
+5. The type of TK_STR is string.
+6. The type of TK_BCONST is bool.
+7. The type of tuple is (type of field1, type of field 2, type of field3,......and so on).
+8. The type of array index must be an integer.
+9. The type on the LHS of the assignment statement must be equivalent to the type on the RHS
+	9.1 In LHS, if derived types exist, then its type must be an integer.
+	9.2 In RHS, if size operator is used, LHS must be an integer.
+	9.3 if arithExpr is used, then check type of all the variables and constants. They should be either TK_NUM or TK_RNUM and LHS should be the same respectively.
+	9.4 if function call statement LHS of TK_ID should be equivalent to return type of the function.
+	9.5 If tuple initialization is used the type of tuple should be equivalent to type of all the elemts on RHS.
+10. In case of multiple assignment,	the type of the all the variables on LHS of the assignment statement must be equivalent to the type of the all the variables on the RHS respectively.
+11. When initializing the array, the type of array must be equivalent to the first element of the initialization list.
+12. In function declaration, there must be a return statement with type of return variable(s) equivalent to return type(s) of function.
+13. The type of TK_ID in for loop must be TK_INT and in range it must be a TK_NUM or TK_INT.
+14. In boolean expression the type must be TK_BCONST or TK_BOOL.

@@ -1,0 +1,23 @@
+//Test Code 2
+__main__ {
+	string str1, str2;
+	int a,b,c,d,e,f;
+	str1 = "intais";
+	a = 10;
+	b = 30;
+	c = 3;
+	d = (a^^c);
+	e = b*d-a^^(c-1);
+	c = e % 1000;
+	str2 = "fifth character of variable str1 is ";
+	write(str2);
+	char q;
+	//q = str1(4);
+	write(q);
+	str2 = "variable str1 is ";
+	write(str2);
+	write(str1);
+	str1 = "a to power c is ";
+	write(str1);
+	write(d);
+}

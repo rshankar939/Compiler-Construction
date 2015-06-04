@@ -1,0 +1,141 @@
+<module> -> <stmtVarFunctionDef> <main>
+<stmtVarFunctionDef> -> <globalDeclarationStmt> <stmtVarFunctionDef>
+<stmtVarFunctionDef> -> <functionDef> <stmtVarFunctionDef>
+<stmtVarFunctionDef> -> EPSILON
+<functionDef> -> <functionHeader> <block>
+<functionHeader> -> TK_FUNC TK_FUNCID TK_LP <paramList> TK_RP TK_OPRET TK_LP <typeList> TK_RP
+<paramList> -> <type> TK_ID <restParams>
+<restParams> -> TK_COMMA <paramList>
+<restParams> -> EPSILON
+<typeList> -> <type> <restType>
+<restType> -> TK_COMMA <typeList>
+<restType> -> EPSILON
+<type> -> TK_INT
+<type> -> TK_REAL
+<type> -> TK_CHAR
+<type> -> TK_BOOL
+<type> -> TK_STRING
+<globalDeclarationStmt> -> <type> <varList> TK_SEMICOLON
+<globalDeclarationStmt> -> TK_TUPLE <tuple> TK_ID TK_SEMICOLON
+<varList> -> TK_ID <varListFollow>
+<varListFollow> -> <array> <moreIds>
+<varListFollow> -> <moreIds>
+<moreIds> -> TK_COMMA <varList>
+<moreIds> -> EPSILON
+<array> -> TK_LP <constVars> <moreArr> TK_RP
+<moreArr> -> TK_COMMA <constVars> <moreArr>
+<moreArr> -> EPSILON
+<tuple> -> TK_LP <typeList> TK_RP
+<main> -> TK_MAIN <block>
+<block> -> TK_LC <stmts> TK_RC
+<stmts> -> <declarationStmt> <stmts>
+<stmts> -> <assignmentStmt> <stmts>
+<stmts> -> <iterationStmt> <stmts>
+<stmts> -> <conditionalStmt> <stmts>
+<stmts> -> <branchStmt> <stmts>
+<stmts> -> <ioStmt> <stmts>
+<stmts> -> <functionCallStmt> TK_SEMICOLON <stmts>
+<stmts> -> EPSILON
+<declarationStmt> -> <type> <varList> TK_SEMICOLON
+<declarationStmt> -> TK_TUPLE <tuple> TK_ID TK_SEMICOLON
+<assignmentStmt> -> <assignStmtSingle>
+<assignmentStmt> -> <assignStmtList>
+<assignStmtSingle> -> TK_ID <derivedTypes> TK_ASSIGN <assignStmtSingleFollow> TK_SEMICOLON
+<assignStmtSingleFollow> -> <size>
+<assignStmtSingleFollow> -> <arithExpr>
+<assignStmtSingleFollow> -> <functionCallStmt>
+<assignStmtSingleFollow> -> TK_PIPE <tupleInit> TK_PIPE
+<assignStmtSingleFollow> -> <arrayInit>
+<assignStmtList> -> TK_LP <varList> TK_RP TK_ASSIGN <assignStmtListFollow> TK_SEMICOLON 
+<assignStmtListFollow> -> <functionCallStmt>
+<assignStmtListFollow> -> TK_PIPE <tupleInit> TK_PIPE
+<arrayInit> -> TK_LS <constList> TK_RS
+<tupleInit> -> TK_CCONST <otherInit>
+<tupleInit> -> TK_NUM <otherInit>
+<tupleInit> -> TK_RNUM <otherInit>
+<tupleInit> -> TK_STR <otherInit>
+<tupleInit> -> TK_BCONST <otherInit>
+<otherInit> -> TK_COMMA <tupleInit>
+<otherInit> -> EPSILON
+<constList> -> <charList>
+<constList> -> <intList>
+<constList> -> <realList>
+<constList> -> <boolList>
+<constList> -> <strList>
+<charList> -> TK_CCONST <moreChar>
+<moreChar> -> TK_COMMA <charList>
+<moreChar> -> EPSILON
+<intList> -> TK_NUM <moreInt>
+<moreInt> -> TK_COMMA <intList>
+<moreInt> -> EPSILON
+<realList> -> TK_RNUM <moreReal>
+<moreReal> -> TK_COMMA <realList>
+<moreReal> -> EPSILON
+<boolList> -> TK_BCONST <moreBool>
+<moreBool> -> TK_COMMA <boolList>
+<moreBool> -> EPSILON
+<strList> -> TK_STR <moreStr>
+<moreStr> -> TK_COMMA <strList>
+<moreStr> -> EPSILON
+<size> -> TK_SIZE TK_ID
+<derivedTypes> -> <arrayElement>
+<derivedTypes> -> <stringElement>
+<derivedTypes> -> <tupleElement>
+<derivedTypes> -> EPSILON
+<arrayElement> -> TK_LP <constVars> <moreDimension> TK_RP
+<moreDimension> -> TK_COMMA <constVars> <moreDimension>
+<moreDimension> -> EPSILON
+<stringElement> -> TK_LS <constVars> TK_RS
+<tupleElement> -> TK_COLON <constVars>
+<arithExpr> -> <multExpr> <moreArith>
+<moreArith> -> TK_PLUS <multExpr> <moreArith>
+<moreArith> -> TK_MINUS <multExpr> <moreArith>
+<moreArith> -> EPSILON
+<multExpr> -> <powExpr> <moreMult>
+<moreMult> -> TK_MUL <powExpr> <moreMult>
+<moreMult> -> TK_DIV <powExpr> <moreMult>
+<moreMult> -> TK_MOD <powExpr> <moreMult>
+<moreMult> -> EPSILON
+<powExpr> -> <primaryExpr> <morePow>
+<morePow> -> TK_POW <primaryExpr> <morePow>
+<morePow> -> EPSILON
+<primaryExpr> -> <constVars>
+<primaryExpr> -> TK_LP <arithExpr> TK_RP
+<iterationStmt> -> TK_FOR TK_LP TK_ID TK_IN <range> TK_RP TK_LC <stmts> TK_RC
+<iterationStmt> -> TK_WHILE TK_LP <boolExpr> TK_RP TK_LC <stmts> TK_RC
+<range> -> TK_LP <constVars> TK_COMMA <constVars> TK_RP
+<boolExpr> -> TK_LP <boolExpr> TK_RP <logicalOp> TK_LP <boolExpr> TK_RP
+<boolExpr> -> <constVars> <boolExprFollow>
+<boolExpr> -> TK_NOT TK_LP <boolExpr> TK_RP
+<boolExprFollow> -> <relationalOp> <constVars>
+<boolExprFollow> -> EPSILON
+<constVars> -> TK_ID <derivedTypes>
+<constVars> -> TK_CCONST
+<constVars> -> TK_BCONST
+<constVars> -> TK_NUM
+<constVars> -> TK_RNUM
+<constVars> -> TK_STR
+<conditionalStmt> -> TK_IF TK_LP <boolExpr> TK_RP TK_LC <stmts> TK_RC <elseStmt>
+<elseStmt> -> TK_ELSE TK_LC <stmts> TK_RC
+<elseStmt> -> EPSILON
+<branchStmt> -> TK_BRK TK_SEMICOLON
+<branchStmt> -> TK_NEXT TK_SEMICOLON
+<branchStmt> -> TK_RETURN TK_LP <retVars> TK_RP TK_SEMICOLON
+<retVars> -> <constVars> <moreRet>
+<moreRet> -> TK_COMMA <retVars>
+<moreRet> -> EPSILON
+<ioStmt> -> TK_READ TK_LP TK_ID TK_RP TK_SEMICOLON
+<ioStmt> -> TK_WRITE TK_LP TK_ID TK_RP TK_SEMICOLON
+<functionCallStmt> -> TK_FUNCID TK_LP <inputParamList> TK_RP
+<inputParamList> -> <constVars> <listVar>
+<inputParamList> -> EPSILON
+<listVar> -> TK_COMMA <inputParamList>
+<listVar> -> EPSILON
+<logicalOp> -> TK_AND
+<logicalOp> -> TK_OR
+<relationalOp> -> TK_LT
+<relationalOp> -> TK_LE
+<relationalOp> -> TK_EQ
+<relationalOp> -> TK_GT
+<relationalOp> -> TK_GE
+<relationalOp> -> TK_NE

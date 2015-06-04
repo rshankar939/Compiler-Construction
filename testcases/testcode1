@@ -1,0 +1,27 @@
+//Test Code 1
+//prints all even integer between 40 and 5000
+//global variables
+int a, b, globalVar1;
+
+//prints all the variables in range a and b 
+//returns number of lines printed
+func _printinrange(int a, int b) -> (int) {
+	int i,j;
+	i = a;
+	j = i%2;
+	if(j==1) {
+		i = i+1;
+	}
+	while( i <= b ) {
+		write(i);
+		i = i + 2;
+	}
+	i = b - a;
+	return (b);
+}
+
+__main__ {
+	a=40;
+	b=500;
+	_printinrange(a,b);
+}
