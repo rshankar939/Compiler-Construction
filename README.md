@@ -5,7 +5,7 @@ Birla Institute of Technology and Sciences
 
 A compiler for a new language, named *	*	C--*	*	, a subset of C with a few unique features<br/>
 Stage 3 Submission - 24th April, 2015<br/>
-Made By:-	*	*	Shubham Gupta*	*	 and *	*	Ravi Shankar Pandey*	*	<br/>
+Made By:-	**Shubham Gupta** and **Ravi Shankar Pandey**<br/>
 
 ##COMPILATION AND EXECUTION - 
 
@@ -15,12 +15,12 @@ Made By:-	*	*	Shubham Gupta*	*	 and *	*	Ravi Shankar Pandey*	*	<br/>
 	./compiler_c-- ./testcases/source_filename
 		
 3. Output Files are -
-*	Lexer Output	-	source_filename_temp_lex
-*	Parser Output	-	source_filename_pt.txt
-*	Scope Graph	-	source_filename_temp_lex_sg.txt
-*	Symbol Table 	-	source_filename_temp_lex_symbol_table.txt
-*	Abstract Syntax Tree -	source_filename_ast.txt
-*	Decorated AST 	-	source_filename_deco_ast.txt
+	3.1    Lexer Output	-	source_filename_temp_lex
+	3.2    Parser Output	-	source_filename_pt.txt
+	3.3    Scope Graph	-	source_filename_temp_lex_sg.txt
+	3.4    Symbol Table 	-	source_filename_temp_lex_symbol_table.txt
+	3.5    Abstract Syntax Tree -	source_filename_ast.txt
+	3.6    Decorated AST 	-	source_filename_deco_ast.txt
 
 
 ##GRAMMAR
