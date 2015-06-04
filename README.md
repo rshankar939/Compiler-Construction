@@ -11,16 +11,16 @@ Made By:-	**Shubham Gupta** and **Ravi Shankar Pandey**<br/>
 
 1. Run the makefile to automate the compilation by running the command "make" (quotes for clarity only).
 
-2. To execute the compiler, the command is:
+2. To execute the compiler, the command is: <br/>
 	./compiler_c-- ./testcases/source_filename
 		
-3. Output Files are -
-	3.1    Lexer Output	-	source_filename_temp_lex
-	3.2    Parser Output	-	source_filename_pt.txt
-	3.3    Scope Graph	-	source_filename_temp_lex_sg.txt
-	3.4    Symbol Table 	-	source_filename_temp_lex_symbol_table.txt
-	3.5    Abstract Syntax Tree -	source_filename_ast.txt
-	3.6    Decorated AST 	-	source_filename_deco_ast.txt
+3. Output Files are - <br/>
+	Lexer Output	-	source_filename_temp_lex <br/>
+	Parser Output	-	source_filename_pt.txt <br/>
+	Scope Graph	-	source_filename_temp_lex_sg.txt <br/>
+	Symbol Table 	-	source_filename_temp_lex_symbol_table.txt <br/>
+	Abstract Syntax Tree -	source_filename_ast.txt <br/>
+	Decorated AST 	-	source_filename_deco_ast.txt <br/>
 
 
 ##GRAMMAR
