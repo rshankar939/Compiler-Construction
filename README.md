@@ -3,6 +3,10 @@ CS F363,
 2nd Semester 2014-15,   
 Birla Institute of Technology and Sciences
 
+#Contributors
+**Ravi Shankar Pandey**: https://github.com/rshankar939/
+**Shubham Gupta**: https://github.com/shubhamgupta1404/
+
 **A compiler for a new language, named C--, a subset of C with a few unique features**
 
 Stage 3 Submission - **24th April, 2015**,  
